@@ -207,9 +207,7 @@ export default function App() {
 
           {pendingCount > 0 && (
             <div className="pending-banner" role="status">
-              <span className="pending-icon" aria-hidden="true">◷</span>
-              {pendingCount} {pendingCount === 1 ? 'alteração pendente' : 'alterações pendentes'}
-              {!isOnline && <span> — será sincronizada quando voltar a estar online</span>}
+              <span className="pending-icon" aria-hidden="true">Certifique-se de que tenha uma conexão com a internet ativa.</span>
             </div>
           )}
 

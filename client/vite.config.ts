@@ -47,5 +47,9 @@ export default defineConfig({
   ],
   server: {
     port: 5173,
+    allowedHosts: ['://onrender.com']
   },
+  preview: {
+    allowedHosts: ['://onrender.com', 'all'] // Liberta o acesso para o Render em modo preview
+  }
 });

@@ -1,10 +1,19 @@
-import 'dotenv/config';
+import dotenv from 'dotenv';
+import { fileURLToPath } from 'node:url';
 import mongoose from 'mongoose';
 import { createApp } from './app.js';
 
+dotenv.config({ path: fileURLToPath(new URL('../.env', import.meta.url)) });
+
 const port = Number(process.env.PORT ?? 3001);
 const mongoUri =
-  process.env.MONGODB_URI ?? 'mongodb://127.0.0.1:27017/users_offline_first';
+  process.env.MONGODB_URI;
+
+if (!mongoUri) {
+  throw new Error(
+    'MONGODB_URI não definida. Crie server/.env a partir de server/.env.example e configure a URI do MongoDB.',
+  );
+}
 
 await mongoose.connect(mongoUri);
 const server = createApp({
