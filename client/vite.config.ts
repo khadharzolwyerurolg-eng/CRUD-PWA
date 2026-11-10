@@ -47,9 +47,9 @@ export default defineConfig({
   ],
   server: {
     port: 5173,
-    allowedHosts: ['://onrender.com']
+    allowedHosts: ['https://pessoas-d36r.onrender.com']
   },
   preview: {
-    allowedHosts: ['://onrender.com', 'all'] // Liberta o acesso para o Render em modo preview
+    allowedHosts: ['https://pessoas-d36r.onrender.com', '.onrender.com'] 
   }
 });
